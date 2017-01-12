@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './frontend/todo_redux.jsx',
+  entry: './frontend/entry.jsx',
   output: {
     path: './',
     publicPath: '/',
