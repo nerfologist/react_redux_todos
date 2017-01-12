@@ -3,10 +3,13 @@ import React from 'react';
 import TodoListItem from './todo_list_item';
 import TodoForm from './todo_form';
 
-const TodoList = ({ todos, receiveTodo }) => (
+const TodoList = ({ todos, receiveTodo, removeTodo }) => (
   <div>
     <ul>
-      { todos.map(todo => <TodoListItem {...todo} />) }
+      { todos.map(todo => 
+        <TodoListItem {...todo}
+          key={todo.id}
+          removeTodo={removeTodo} />) }
     </ul>
     <TodoForm receiveTodo={ receiveTodo } />
   </div>
@@ -14,7 +17,8 @@ const TodoList = ({ todos, receiveTodo }) => (
 
 TodoList.propTypes = {
   todos: React.PropTypes.array.isRequired,
-  receiveTodo: React.PropTypes.func.isRequired
+  receiveTodo: React.PropTypes.func.isRequired,
+  removeTodo: React.PropTypes.func.isRequired
 };
 
 export default TodoList;

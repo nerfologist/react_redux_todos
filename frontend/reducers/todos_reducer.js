@@ -1,7 +1,7 @@
 import deepFreeze from 'deep-freeze';
 import merge from 'lodash/merge';
 
-import { RECEIVE_TODO, RECEIVE_TODOS } from '../actions/todo_actions';
+import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO } from '../actions/todo_actions';
 
 const _initialState = {
   1: {
@@ -20,13 +20,17 @@ const _initialState = {
 
 const todosReducer = (state = _initialState, action) => {
   deepFreeze(state);
+  let nextState = merge({}, state);
 
   switch(action.type) {
     case RECEIVE_TODOS:
       return action.todos;
     case RECEIVE_TODO: {
-      let nextState = merge({}, state);
       nextState[action.todo.id] = action.todo;
+      return nextState;
+    }
+    case REMOVE_TODO: {
+      delete nextState[action.todoId];
       return nextState;
     }
     default: return state;
