@@ -1,17 +1,24 @@
 import React from 'react';
 
-const TodoListItem = ({ id, title, body, done, removeTodo }) => (
+const toggle = todo => (
+  Object.assign({}, todo, { done: !todo.done })
+);
+
+const TodoListItem = ({ todo, receiveTodo, removeTodo }) => (
   <li>
-    {title}
-    <button onClick={removeTodo.bind(null, id)}>Delete</button>
+    {todo.title} (done: {todo.done ? 'true' : 'false'})
+    <button onClick={removeTodo.bind(null, todo.id)}>
+      Delete
+    </button>
+    <button onClick={receiveTodo.bind(null, toggle(todo))}>
+      Toggle
+    </button>
   </li>
 );
 
 TodoListItem.propTypes = {
-  id: React.PropTypes.number.isRequired,
-  title: React.PropTypes.string.isRequired,
-  body: React.PropTypes.string,
-  done: React.PropTypes.bool.isRequired,
+  todo: React.PropTypes.object.isRequired,
+  receiveTodo: React.PropTypes.func.isRequired,
   removeTodo: React.PropTypes.func.isRequired
 };
 
