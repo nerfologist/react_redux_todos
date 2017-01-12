@@ -1,8 +1,10 @@
 import React from 'react';
 
+import TodoListItem from './todo_list_item';
+
 const TodoList = ({ todos }) => (
   <ul>
-    { todos.map(todo => <li>{todo.title}</li>) }
+    { todos.map(todo => <TodoListItem title={todo.title} />) }
   </ul>
 );
 
