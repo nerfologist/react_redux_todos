@@ -1,8 +1,10 @@
 import React from 'react';
 
+import TodoListContainer from './todo_list_container';
+
 const App = () => (
   <div>
-    My awesome Todos app
+    <TodoListContainer />
   </div>
 );
 
