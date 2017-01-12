@@ -13,16 +13,10 @@ class TodoForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.updateTitle = this.updateTitle.bind(this);
-    this.updateBody = this.updateBody.bind(this);
   }
 
-  updateTitle(evt) {
-    this.setState({ title: evt.currentTarget.value });
-  }
-
-  updateBody(evt) {
-    this.setState({ body: evt.currentTarget.value });
+  update(property) {
+    return e => this.setState({ [property]: e.target.value });
   }
 
   handleSubmit(evt) {
@@ -41,14 +35,20 @@ class TodoForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text"
-          name="title"
-          value={this.state.title}
-          onChange={this.updateTitle} />
-        <input type="text"
-          name="body"
-          value={this.state.body}
-          onChange={this.updateBody} />
+        <label>
+          Title: 
+          <input type="text"
+            name="title"
+            value={this.state.title}
+            onChange={this.update('title')} />
+        </label>
+        <label>
+          Body: 
+          <input type="text"
+            name="body"
+            value={this.state.body}
+            onChange={this.update('body')} />
+        </label>
         <input type="submit" />
       </form>
     );
