@@ -6,7 +6,7 @@ import TodoForm from './todo_form';
 const TodoList = ({ todos, receiveTodo }) => (
   <div>
     <ul>
-      { todos.map(todo => <TodoListItem title={todo.title} />) }
+      { todos.map(todo => <TodoListItem {...todo} />) }
     </ul>
     <TodoForm receiveTodo={ receiveTodo } />
   </div>
