@@ -7,7 +7,9 @@ Showcases the following concepts:
 - redux:
   - store
   - actions
+    - passing actions to components as props
   - reducer
+    - combining reducers
 - react:
   - functional components
 - react-redux
