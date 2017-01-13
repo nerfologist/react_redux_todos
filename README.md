@@ -24,3 +24,7 @@ npm serve
 
 (head over to localhost:8080)
 ```
+
+# Changelog
+
+v0.0.1: Basic redux + react todo manager. Add, remove, toggle todos.
