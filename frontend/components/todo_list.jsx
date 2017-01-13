@@ -12,7 +12,7 @@ const TodoList = ({ todos, receiveTodo, removeTodo }) => (
                       receiveTodo={receiveTodo}
                       removeTodo={removeTodo} />) }
     </ul>
-    <TodoForm receiveTodo={ receiveTodo } />
+    <TodoForm receiveTodo={receiveTodo} />
   </div>
 );
 
