@@ -3,11 +3,12 @@ import React, { Component, PropTypes } from 'react';
 class TodoDetailView extends Component {
   render() {
     const { removeTodo } = this.props;
-    const { body } = this.props.todo;
+    const { id, body } = this.props.todo;
 
     return (
       <div>
-        <p>{body}</p>
+        <label>Id: {id} </label>
+        <label>Body: {body}</label>
         <button onClick={removeTodo}>
           Remove todo
         </button>
