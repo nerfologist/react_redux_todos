@@ -4,17 +4,25 @@ const toggleDone = todo => (
   Object.assign({}, todo, { done: !todo.done })
 );
 
-const TodoListItem = ({ todo, receiveTodo, removeTodo }) => (
-  <li>
-    {todo.title} (done: {todo.done ? 'true' : 'false'})
-    <button onClick={removeTodo.bind(null, todo.id)}>
-      Delete
-    </button>
-    <button onClick={receiveTodo.bind(null, toggleDone(todo))}>
-      { todo.done ? 'Mark undone' : 'Mark done' }
-    </button>
-  </li>
-);
+class TodoListItem extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { todo, receiveTodo } = this.props;
+    const { title, done } = todo;
+
+    return (
+      <li>
+        { title } (done: { done ? 'true' : 'false'})
+        <button onClick={ receiveTodo.bind(null, toggleDone(todo)) }>
+          { todo.done ? 'Mark undone' : 'Mark done' }
+        </button>
+      </li>
+    );
+  }
+}
 
 TodoListItem.propTypes = {
   todo: React.PropTypes.object.isRequired,

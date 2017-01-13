@@ -8,9 +8,9 @@ const TodoList = ({ todos, receiveTodo, removeTodo }) => (
     <ul>
       { todos.map(todo => 
         <TodoListItem todo={todo}
-          key={todo.id}
-          receiveTodo={receiveTodo}
-          removeTodo={removeTodo} />) }
+                      key={todo.id}
+                      receiveTodo={receiveTodo}
+                      removeTodo={removeTodo} />) }
     </ul>
     <TodoForm receiveTodo={ receiveTodo } />
   </div>
