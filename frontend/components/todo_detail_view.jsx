@@ -6,8 +6,10 @@ class TodoDetailView extends Component {
   }
 
   render() {
+    const { body } = this.props.todo;
+
     return (
-      <p>detail</p>
+      <p>{body}</p>
     );
   }
 }

@@ -39,7 +39,7 @@ class TodoListItem extends Component {
       <li>
         <a onClick={this.toggleDetail}>{title}</a>
         (done: { done ? 'true' : 'false'})
-        <button onClick={ this.toggleDone }>
+        <button onClick={this.toggleDone}>
           { done ? 'Mark undone' : 'Mark done' }
         </button>
         { detail }
