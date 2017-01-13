@@ -1,15 +1,17 @@
 import React, { Component, PropTypes } from 'react';
 
 class TodoDetailView extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const { removeTodo } = this.props;
     const { body } = this.props.todo;
 
     return (
-      <p>{body}</p>
+      <div>
+        <p>{body}</p>
+        <button onClick={removeTodo}>
+          Remove todo
+        </button>
+      </div>
     );
   }
 }

@@ -12,7 +12,7 @@ export const receiveTodo = todo => ({
   todo: todo
 });
 
-export const removeTodo = todoId => ({
+export const removeTodo = todo => ({
   type: REMOVE_TODO,
-  todoId: todoId
+  todo: todo
 });
