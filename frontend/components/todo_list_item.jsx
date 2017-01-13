@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import TodoDetailViewContainer from './todo_detail_view_container';
 
-class TodoListItem extends React.Component {
+class TodoListItem extends Component {
   constructor(props) {
     super(props);
 
@@ -49,9 +49,9 @@ class TodoListItem extends React.Component {
 }
 
 TodoListItem.propTypes = {
-  todo: React.PropTypes.object.isRequired,
-  receiveTodo: React.PropTypes.func.isRequired,
-  removeTodo: React.PropTypes.func.isRequired
+  todo: PropTypes.object.isRequired,
+  receiveTodo: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired
 };
 
 export default TodoListItem;
