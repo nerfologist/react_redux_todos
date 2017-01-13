@@ -27,4 +27,6 @@ npm serve
 
 # Changelog
 
+v0.0.2: Toggle todo detail view w/ todo body when clicking todo title.
+
 v0.0.1: Basic redux + react todo manager. Add, remove, toggle todos.
