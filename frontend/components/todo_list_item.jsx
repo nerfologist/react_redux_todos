@@ -1,6 +1,6 @@
 import React from 'react';
 
-const toggle = todo => (
+const toggleDone = todo => (
   Object.assign({}, todo, { done: !todo.done })
 );
 
@@ -10,8 +10,8 @@ const TodoListItem = ({ todo, receiveTodo, removeTodo }) => (
     <button onClick={removeTodo.bind(null, todo.id)}>
       Delete
     </button>
-    <button onClick={receiveTodo.bind(null, toggle(todo))}>
-      Toggle
+    <button onClick={receiveTodo.bind(null, toggleDone(todo))}>
+      { todo.done ? 'Mark undone' : 'Mark done' }
     </button>
   </li>
 );
