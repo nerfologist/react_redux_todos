@@ -5,11 +5,12 @@ import { receiveStep } from '../../actions/step_actions';
 import StepList from './step_list';
 
 const mapStateToProps = (state, { todo }) => ({
-  steps: allStepsByTodoId(state, todo.id)
+  steps: allStepsByTodoId(state, todo.id),
+  todo: todo
 });
 
-const mapDispatchToProps = (dispatch, step) => ({
-  receiveStep: () => dispatch(receiveStep(step))
+const mapDispatchToProps = dispatch => ({
+  receiveStep: step => dispatch(receiveStep(step))
 });
 
 export default connect(
