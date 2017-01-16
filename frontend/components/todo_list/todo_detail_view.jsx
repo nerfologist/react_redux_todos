@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import StepListContainer from '../step_list/step_list_container';
+
 class TodoDetailView extends Component {
   render() {
     const { removeTodo } = this.props;
@@ -12,6 +14,7 @@ class TodoDetailView extends Component {
         <button onClick={removeTodo}>
           Remove todo
         </button>
+        <StepListContainer todo={this.props.todo} />
       </div>
     );
   }

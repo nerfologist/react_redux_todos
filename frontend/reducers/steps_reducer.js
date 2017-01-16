@@ -5,16 +5,19 @@ import { RECEIVE_STEPS, RECEIVE_STEP, REMOVE_STEP } from '../actions/step_action
 
 const _initialState = {
   1: {
+    id: 1,
     title: 'Buy soap',
     todo_id: 1,
     done: true
   },
   2: {
+    id: 2,
     title: 'Buy brush',
     todo_id: 1,
     done: false
   },
   3: {
+    id: 3,
     title: 'Buy doggy shampoo',
     todo_id: 2,
     done: false
